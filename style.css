@@ -1,0 +1,199 @@
+/* A Free Design by Bryant Smith (bryantsmith.com) */
+
+html, body {
+text-align: center;
+}
+p {text-align: left;}
+
+
+
+/* Specs of the background electron */
+.cube_background {
+	position: relative;
+	top: 10px;
+	left: 10px;
+	z-index: 1;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	background:rgba(82, 245, 49, 0.986); 
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #F1F5F8;
+  	background: #FFFFFF/* #26476E url(background.png) repeat-x;*/
+}
+*
+{
+  margin: 0 auto 0 auto;
+ text-align:left;}
+
+#page
+{
+  margin: auto; 
+  display: block; 
+  height:auto;
+  position: relative; 
+  overflow: hidden; 
+  width: 1000px; /*753px;*/
+}
+
+#header
+{
+margin-top:25px;
+padding-top:63px;
+padding-bottom: 0px;
+padding-left:30px;
+padding-right:30px;
+background-image:url(background_header.png);
+background-repeat:no-repeat;
+background-position: 20% 70%;
+background-size: 1000px 200px;
+height:122px;/*122px*/
+width:1000px; /*700px;*/
+
+overflow:hidden;
+}
+
+#header h1, #header h2
+{
+/*margin-left:0px;*/
+width:693px;
+position: relative;
+color:#000000;
+text-align:center;
+font-size:15px;
+font-weight:bold;
+font-family:Arial, Helvetica, sans-serif;
+clear:both;
+}
+
+#header h1
+{
+/*margin-left:0px;*/
+width:693px;
+position:relative;
+color:#26476E;
+font-size:30px;
+}
+
+
+
+#bar
+{
+background-image:url(bar.png);
+background-repeat:no-repeat;
+background-size:1000px 70px;
+background-position: center;
+height:53px;
+width:1000px;
+padding-bottom:15px;
+margin-left:10px;
+margin-right:auto;
+}
+
+#bar ul {
+	/*margin: 0px auto 0px auto;*/
+	padding: 0px;
+	list-style-type: none;
+	height: 74px;
+	margin-left:30px;
+}
+#bar ul li , #bar ul li a, #bar ul li a:visited{
+	/*margin: 0px;*/
+	padding: 0px;
+	height: 30px;
+	overflow: hidden;
+	display: inline;
+	text-align:center;
+	line-height:65px;
+	color:#26476E;
+	padding-left:6px;
+	padding-right:6px;
+}
+
+#bar ul li a:hover
+{
+color:#000000;
+text-decoration:underline;
+
+}
+
+
+
+
+
+
+
+
+
+.contentTitle
+{
+width:700px;
+height:44px;
+/*margin-top:20px;
+margin-left:0px;
+margin-right:25px;*/
+/*background-image:url(tab_back.png); */
+/*background-repeat:no-repeat; */
+
+}
+
+.contentTitle h1
+{
+margin-left:21px;
+padding-top:8px;
+font-size:21px;
+font-weight:bold;
+letter-spacing:-1px;
+color: #000000; /*#FFFFFF;*/
+}
+
+
+.contentText
+{
+width:680px;
+padding-left:30px;
+padding-right:30px;
+font-size:16px;
+color:#000000;
+line-height:30px;
+}
+
+a
+{
+text-decoration:none;
+color:#F1F3F8;
+}
+
+a:hover
+{
+border-bottom:1px dotted #F1F3F8;
+}
+
+
+#footer {
+width: 750px;
+height:20px;
+text-align:center;
+font-size:9px;
+color:#223F8D;
+padding-top:20px;
+}
+
+html, body {
+text-align: center;
+}
+p {
+margin:7px;
+text-align: left;
+text-align:justify;
+}
+
+/* Subheading specs     */
+#subheading {
+    margin-left: 10%;
+    /*font-style: italic;*/
+}

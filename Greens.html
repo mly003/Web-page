@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--MathJax add-on-->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+  </script>
+ 
+ <!--equation numbering-->
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+    </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+  <title>Non equilibrium quantum matter!</title>
+    <style>
+body {
+  margin: 0 auto;
+}
+
+#nav_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 8px;
+  width: 25%;
+  background-color: #f1f1f1;
+  /*position: fixed;*/
+  height: 100%;
+  /*overflow: auto;*/
+  float: left;
+}
+
+
+#nav_list a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#nav_list a.active {
+  background-color:  rgb(62, 62, 243,0.5);
+  color: white;
+}
+
+#nav_list a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.content_text {
+  float: left;
+  width: 60%;
+}
+
+
+
+/* some properties involving the placement of the sidebar. See
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav */
+
+    </style>
+
+
+  </head>
+
+  <body>
+    <div id="page">
+		
+        <div id="header">
+        	<h1>Non equilibrium quantum matter</h1>
+            <h2>A thorough introduction to quantum condensed matter theory <br/> in strong electromagnetic fields</h2>
+            
+        </div>
+        <div id="bar">
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="Theory.html">Theory</a></li>
+
+            </ul>
+        </div>
+
+        <!--vertical navigation bar. Once more; gathered from
+          https://www.w3schools.com/css/css_navbar.asp -->
+
+
+        <!--we need to make a div that incorporates the side bar and the content-->
+        <div class="container">
+          <!--here begins the left justified content-->
+          
+            <ul id="nav_list">
+              <li><a href="Theory.html">Overview</a></li>
+              <li><a class="active" href="Greens.html">Greens functions</a></li>
+              <li><a href="Grassmann.html">Grassman integration</a></li>
+              <li><a href="non_eq_theory.html">Non equilibrium theory</a></li>
+            </ul>
+
+        <!--here begins the right justified content-->
+
+          <div class="content_text">
+            <div class="contentTitle"><h1>Introduction</h1></div>
+            <div class="contentText"> 
+                <h1>Time evolution pictures</h1>
+                <p>Heisenberg picture: All dynamics is contained in the operators, i.e.,
+                    
+                    \begin{equation} 
+                    i\hbar\frac{\partial}{\partial t}\hat{O} =i[\hat{H},\hat{O}]
+                    \end{equation}
+
+                    Every expectation value is formed from a time dependent operator
+                    on a time-independent state or an ensemble of such states. All
+                    expectation values are taken with respect to the grand canonical 
+                    ensemble
+                    
+                    \begin{equation} 
+                    \hat{\rho}=\frac{e^{-\beta\hat{\mathcal{H}}} }{Z}
+                    \end{equation}
+
+                    were \( Z=tr \{e^{-\beta\hat{\mathcal{H}}}\} \)
+                    and we tacitly denote \(\hat{\mathcal{H}}= \hat{ \mathcal{H} }_{0} -\mu \hat{N} \). 
+                    In this way,
+                    
+                    
+                    \begin{equation} 
+                    \langle\hat{O}\rangle=\sum_{n} \langle n|\hat{\rho}\hat{O}|n\rangle\ 
+                    \end{equation}
+
+                    Greens functions
+                    
+                    \begin{equation} 
+                    G_{\alpha,\beta}(t,t')=-i\langle \hat{T}\hat{c}_{\alpha}(t)\hat{c}^{\dagger}_{\beta}(t')\rangle 
+                    \end{equation}
+
+                    where \( \hat{T}\) is the time ordering operator and \(\alpha,\beta\) denote
+                    quantum numbers (e.g. spin, orbital, momentum etc.)
+                    In the context of nonequilibrium systems - we must be more careful, and 
+                    state the expectation value as follows,
+                    
+                    \begin{equation} 
+                    G_{\alpha,\beta}(t,t')= -i\langle \hat{T}\hat{U}(0,t)\hat{c}_{\alpha}(t)\hat{U}(t,t')\hat{c}^{\dagger}_{\beta}(t')\hat{U}(t',0)\rangle
+                    \end{equation}
+                    
+                    which in the time-independent case evaluates to the simpler expression above.
+                    We will touch upon various variants of this expression later, but 
+                    right now we will focus on the retarded Green's function, defined as 
+                    follows
+                    \begin{equation} 
+                    G^{R}_{\alpha,\beta}(t,t')=-i \theta(t-t')\langle\{\hat{c}_{\alpha}(t),\hat{c}_{\beta}^{\dagger}(t')\}\rangle 
+                    \end{equation}
+
+
+                    where \(\theta(t)\) is the heaviside step function. Upon differentiating
+                    \(G^{R}\) with respect to t, we obtain
+                    
+                    \begin{equation}
+                    i\frac{\partial}{\partial t}G^R_{\alpha,\beta} =\delta(t-t') \langle\{\hat{c}_{\alpha}(t),\hat{c}_{\beta}^{\dagger}(t')\}\rangle +\theta(t-t')\langle\{i[\hat{\mathcal{H}},\hat{c}_{\alpha}(t)],\hat{c}^{\dagger}_{\beta}(t')\}\rangle  
+                    \end{equation}
+
+                    In order to proceed with an explicit expression, we need to specify
+                    a system Hamiltonian. To that end, we simply define the Hamiltonian of
+                    a non-interacting system of electrons (in a periodic potential)
+                    
+                    \begin{equation} 
+                    \hat{\mathcal{H}}=\sum_{\boldsymbol{k}} \epsilon(\boldsymbol{k})\hat{c}_{\boldsymbol{k}}^{\dagger}\hat{c}_{\boldsymbol{k}}
+                    \end{equation}
+                    
+                    Now, The Green's 
+                    
+                    \begin{equation} 
+                    i\frac{\partial}{\partial t}G^R_{\boldsymbol{k}} =\delta(t-t')\delta_{\sigma,\sigma'} -i\epsilon(\boldsymbol{k})\theta(t-t')\langle\{\hat{c}_{\boldsymbol{k}}(t),\hat{c}_{\boldsymbol{k}}^{\dagger}(t')\}\rangle  
+                    \end{equation}
+
+                    or alternatively
+                    \begin{equation} 
+                    [i\frac{\partial}{\partial t} -\epsilon(\boldsymbol{k}) ]G^R_{\boldsymbol{k}} =\delta(t-t')\delta_{\sigma,\sigma'} 
+                    \end{equation}
+                    
+                    Which evidently is solved by
+                    
+                    \begin{equation} 
+                    G_{\boldsymbol{k}}^R(t,t')=-i\theta(t-t')e^{-i\epsilon(\boldsymbol{k})(t-t')} 
+                    \end{equation}
+
+                    Owing to the fact that \( G_{\boldsymbol{k}}^R(t,t')= G_{\boldsymbol{k}}^R(t-t')\) it is 
+                    readily verified that the Fourier transformed expression is given by
+
+                    \begin{equation}  
+                    G_{\boldsymbol{k}}^R(\omega)=\frac{1}{2\pi}\frac{1}{\omega-\epsilon(\boldsymbol{k})+i\eta^{+}} 
+                    \end{equation}
+
+                    where \(\eta^{+}\) is a positive infinitesimal. To actually describe something
+                    about our system, we would like to introduce the concept of a spectral function
+
+                    \begin{equation} 
+                    A_{\boldsymbol{k}}(\omega)=-\frac{1}{\pi}Im{G_{\boldsymbol{k}}^R(\omega)} 
+                    \end{equation}
+
+                    By the Dirac identity \(\frac{1}{x+i\eta^{+}}=\mathcal{P}(\frac{1}{x})-i\pi\delta(x)\),
+                    the spectral function of our system is 
+
+                    \begin{equation} 
+                    A_{\boldsymbol{k}}(\omega)=\delta(\omega-\epsilon(\boldsymbol{k})) 
+                    \end{equation}
+                    
+                    The quantity \(A(\omega)d\omega\) gives the probability to find
+                    and electron in the infinitesimal energy window \([\omega,\omega+d\omega]\)
+
+                    Green's functions for interacting systems are characterized by 
+                    a self energy appearing in the spectral function. 
+
+                    \begin{equation}  
+                        G_{\boldsymbol{k}}^R(\omega)=\frac{1}{\omega-\epsilon(\boldsymbol{k})+\Sigma+i\eta^{+}}
+                        \label{eq:full}
+                    \end{equation}
+
+                    \( \Sigma\) can be comprised of a real and imaginary part. Now, the real
+                    part will only give rise to a shift in the position of the singularity, whereas
+                    the imaginary part will give rise to a broadening of the spectral function.
+                    The latter property is best illustrated by re-writing the expression [\ref{eq:full}] as 
+
+                    \begin{equation} 
+                        A_{\boldsymbol{k}}(\omega) = \frac{(\eta^{+}+Im{\Sigma})^2}{(\omega+Re(\Sigma)-\epsilon(\boldsymbol{k}))^2+(\eta^{+} + Im(\Sigma))^2}
+                        
+                    \end{equation}
+                
+                    The above expression can be seen to arise from a damped Green's function in 
+                    the time domain
+
+                    \begin{equation} 
+                    G_{\boldsymbol{k}}^R(t,t')=-i\theta(t-t')e^{-i\epsilon(\boldsymbol{k})(t-t')-Im(\Sigma)(t-t'} 
+                    \end{equation}
+
+                    As a result, the single particle states can be said to have a finite lifetime. 
+                    Another thing that is connected to the spectral function is the notion of a sum rule. 
+                    We will first define the sum rule for an equilibrium spectral function.
+                    In the Lehmann representation, the spectral function can be cast as
+                    \begin{equation}
+                        A_{\boldsymbol{k}}(\omega)=\frac{1}{\mathcal{Z}}\sum_{n,m}|\langle n|\hat{c}_{\boldsymbol{k}}| m\rangle|^2 (e^{-\beta E_n} + e^{-\beta E_m}) \delta(\omega + E_n-E_m)
+                    \end{equation}
+                    For which the sum rule is the following identity,
+                    \begin{equation}
+                        \int_{-\infty}^{\infty} d\omega A_{\boldsymbol{k}}(\omega)=1
+                    \end{equation}
+                    The sum rule is a useful benchmark. We will later see the a corresponding
+                    non equilibrium analogue of a sum rule.
+                    
+                    <h1> Imaginary time Green's functions - Matsubara Green's functions</h1>
+                    Let time be imaginary, and define a real quantity \(\tau=it\). An imaginary time 
+                    Green's function can be defined as follows
+                    \begin{equation}
+                        \mathcal{G}_{\alpha,\beta}(\tau) = -i\langle \hat{T}_{\tau} \hat{c}_{\alpha}(\tau) \hat{c}_{\beta}^{\dagger}(0)\rangle
+                    \end{equation}
+                    where we let \(-\beta \lt \tau \lt \beta \) . The evolution the operators in 
+                    imaginary time is 
+                    \begin{equation}
+                        \hat{O}(\tau)=e^{\hat{H}\tau}\hat{O}e^{-\hat{H}\tau}
+                    \end{equation}
+                    Furthermore, the Matsubara Green's functions are anti-periodic in \(\tau\) due to 
+                    the cyclicity of the trace. For \(\tau\lt 0\) we have
+                    \begin{equation}
+                        \mathcal{G}_{\alpha,\beta}(\tau) = \epsilon \mathcal{G}_{\alpha,\beta}(\tau+\beta)
+                    \end{equation}
+                    with \(\epsilon=-1\) (\(\epsilon=-1\)) for fermions (bosons). Due to the \(2\beta\) periodicity of the Green's function, we can define 
+                    a fourier transformation as follows
+                    \begin{equation}
+                        \mathcal{G}_{\alpha,\beta}(i\omega_n) =\frac{1}{2}\int_{-\beta}^{\beta} d\tau e^{i\omega_n} \mathcal{G}_{\alpha,\beta}(\tau)
+                    \end{equation}
+                    where \(\omega_n =\frac{2\pi n}{2\beta} \). By way of a variable change, and using the
+                    anti-periodicity, it is readily shown that 
+                    \begin{equation}
+                        \mathcal{G}_{\alpha,\beta}(i\omega_n) = \int_{0}^{\beta} d\tau e^{i\omega_n} \mathcal{G}_{\alpha,\beta}(\tau)
+                    \end{equation}
+                    where n is an even integer for bosons and an odd integer for fermions. The correspondence 
+                    between the imaginary time Green's function and the retarded Green's function is realized
+                    through analytical continuation. To this end, define a Lehmann representation of
+                    the imaginary time G-function, and assume \(\tau \gt 0\)
+
+                    \begin{equation}
+                        \mathcal{G}_{\alpha,\beta}(\tau) = -\frac{i}{\mathcal{Z}}\sum_{n,m} e^{-\beta E_n + E_n \tau - E_m\tau} \langle n| \hat{c}_{\alpha}|m\rangle\langle m|\hat{c}_{\beta}^{\dagger}|n\rangle
+                    \end{equation}
+                    
+                    Performing the transformation to frequency space, we get 
+                    
+                    \begin{equation}
+                        \mathcal{G}_{\alpha,\beta}(i\omega_k) =-\frac{i}{\mathcal{Z}} \sum_{n,m} e^{-\beta E_n} \langle n| \hat{c}_{\alpha}|m\rangle\langle m|\hat{c}_{\beta}^{\dagger}|n\rangle \frac{( {e^{i\omega_k \beta +\beta E_n \tau - E_m\tau}} -1)}{i\omega_k + E_n -E_m} \\
+                        = 
+                    \end{equation}
+                </p>
+
+                <p>
+
+
+
+
+
+                </p>
+
+    
+
+            </div>
+          </div>
+        </div> <!--encloses the "columns" div-->
+
+
+        <div id="footer">
+          <a href="http://www.bryantsmith.com">web page designer </a> 
+          <a href="http://www.bryantsmith.com">bryant smith</a>
+        </div>
+      </div> <!--encloses the div with id="page"-->
+  </body>
+</html>

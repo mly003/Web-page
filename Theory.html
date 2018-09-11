@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--MathJax add-on-->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+  </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+  <title>Non equilibrium quantum matter!</title>
+    <style>
+body {
+  margin: 0 auto;
+}
+
+#nav_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 8px;
+  width: 25%;
+  background-color: #f1f1f1;
+  /*position: fixed;*/
+  height: 100%;
+  /*overflow: auto;*/
+  float: left;
+}
+
+
+#nav_list a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#nav_list a.active {
+  background-color:  rgb(62, 62, 243,0.5);
+  color: white;
+}
+
+#nav_list a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.content_text {
+  float: left;
+  width: 60%;
+}
+
+
+
+/* some properties involving the placement of the sidebar. See
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav */
+
+    </style>
+
+
+  </head>
+
+  <body>
+    <div id="page">
+		
+        <div id="header">
+        	<h1>Non equilibrium quantum matter</h1>
+            <h2>A thorough introduction to quantum condensed matter theory <br/> in strong electromagnetic fields</h2>
+            
+        </div>
+        <div id="bar">
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="Theory.html">Theory</a></li>
+                <!--<li><a href="#"></a></li>
+                <li><a href="#">My Company</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>-->
+            </ul>
+        </div>
+
+        <!--vertical navigation bar. Once more; gathered from
+          https://www.w3schools.com/css/css_navbar.asp -->
+
+
+        <!--we need to make a div that incorporates the side bar and the content-->
+        <div class="container">
+          <!--here begins the left justified content-->
+          
+            <ul id="nav_list">
+              <li><a class="active" href="#Overview">Overview</a></li>
+              <li><a href="Greens.html">Greens functions</a></li>
+              <li><a href="Grassman_integration.html">Grassman integration</a></li>
+              <li><a href="non_eq_theory.html">Non equilibrium theory</a></li>
+            </ul>
+
+        <!--here begins the right justified content-->
+
+          <div class="content_text">
+            <div class="contentTitle"><h1>Introduction</h1></div>
+            <div class="contentText"> 
+                <p>The information on this site will be concerned with a cross-disciplinary 
+                    field of condensed matter physics. Specifically, the unification of the 
+                    quantum mechanics of light-matter interactions together with the quantum field 
+                    theory of strongly correlated condensed matter systems. In the following, a brief
+                    exposition of the two will be given, before we delve into the nitty gritty 
+                    theoretical description.
+                  </p>
+              <h2>Strongly Correlated Electron Systems</h2>
+              <p>At the most basic level, a solid state material can be described in terms
+                of electrons roaming around in a static crystal lattice constituting positively
+                charged atomic cores. From the electron systems vantage point, there are two 
+                forms of energy dictating the dynamics of the system. The first contribution is
+                the kinetic energy contribution of each electron, and the other one is the 
+                pairwise electrostatic potential energy of the system. 
+              </p>
+              <p>For starters, it is the kinetic energy that induces motion electron motion in 
+                the crystal lattice. In terms of the electrons momentum, p, the kinetic energy is given 
+                by $$E_k={p^2 \over 2m}$$, where m is the electrons mass. Due to the nature of the coulombic force between two electrons,
+                the system will have its energy raised whenever pairs of electrons are brought 
+                closely together. The potential energy is simply$$E_p = { 1 \over r}.$$ , where 
+                r is the distance between the two electrons.
+              </p>
+              <p>At this point, we are in a position to at least make some charicative 
+                descriptions of different condensed matter systems. To this end, we define 
+                the ratio of the above quantities, \( \rho={ E_k \over E_p }\). For a system
+                with \(\rho \approx 0\) the electrons are spatially localized. Note that \(\rho \approx 0\)
+                would permit the kinetic energ contribution to be non-vanishing. However, the
+                dominating potential energy would effectively lock the electrons in place. 
+                The opposite case of \(\rho \approx 1\) describes a system comprised of 
+                independendent electrons travelling around in the crystal lattice unimpeded
+                by other electrons. 
+              </p>
+              <p>
+                The described domains of \(\rho= 1,0\) each belong to simple systems. 
+                The independent electron description in the case of \(\rho \approx 1\) 
+                enables us to ask meaningful questions about single electron properties
+                like; an electrons energy or momentum without any reference to the other
+                electrons in the system. Where \(\rho \approx 0\), requires a bit more theoretical
+                machinery, but eventually reduces to an equally trivial description as the 
+                \(\rho \approx 1\) case. One way to make it apparent, is to introduce a 
+                simplified form of the potential energy, 
+                $$E_p \approx \theta( {1\over r} -{1 \over a}) {1\over r+c}$$ where \(\theta\) is 
+                the heaviside step function, a is the lattice site separation, and c is what
+                is referred to as a "softening parameter" - introduced to remove the infinite
+                energy at \(r=0\). (here only in an ad hoc way) If we now imagine the 3D crystal lattice to be partioned
+                into cells/cubes of side lengths a, we can envisage that some cells will
+                have one or more electrons, whereas some cells will have none. Since there is
+                no kinetic energy, the electrons stay still at all times and 
+                the matter of calculating the total energy of the system is simply done by
+                counting up the number of electrons in each cell and prescribing to each cell 
+                an energy according to the formula above. What then about single electron energies?
+                Since the Hamiltonian (the expression for the total energy of the system) incorporates
+                only two-body interactions, attributing one electron a given energy is at the face of it
+                not a meaningful question. However, experimental techniques like ARPES (Angle 
+                Resolved Photo-emission Spectroscopy) probes exactly these energies. To establish
+                the correspondence between theory and this experimental technique, we must in 
+                due time explore the theory of Green's functions. As for now, we settle this 
+                example by noting that we can in fact attribute single particle energies to even 
+                the system described by \( \rho=0\).
+    
+    
+              </p>
+              <!--- <figure>
+                <img src="cubes_w_hopping.png" class="cube_background" >
+                <img src="electron.png" class="electron">
+                
+                <figcaption>Figure 1: Electrons hopping in a crystal lattice.</figcaption>
+              </figure> -->
+    
+              <figure>
+                <div style="position: relative; left: 0; top: 0;">
+                  <img src="cubes_w_hopping.png" class="cube_background" >
+                  <!---<img src="electron.png" class="electron">-->
+                </div>
+                <figcaption>Figure 1: Electrons hopping in a crystal lattice.</figcaption>
+              </figure>
+    
+    
+              <p>The pieces missing are all the other values of \(\rho\) between 0 and 1. 
+                It turns out that this landscape offers rich physics like exotic quantum
+                mechanical phase transitions. At the same time, it admits mostly
+                highly non-trivial theoretical descriptions. (which only adds to the excitement)
+                Now, given the trivial nature of both regimes layed out above, what is so 
+                challenging about this new intermediate regime? Unlike the above description, 
+                which could be understood in classical terms, the intermediate regime is only
+                aptly described by quantum mechanics. Nevertheless, we will give it a shot.
+              </p>
+              <p>
+                The quantum mechanical state of a system is always expressed in a particular basis.
+                We are free to choose this basis, but we are at the same time guided by
+                the particularity of the physical system we are trying to describe. In the hydrogen
+                atom, the attractive interaction between electron and nucleus offers an apt 
+                description of the system in terms of basis functions that are localized in 
+                the vicinity of the nucleus. For a (semi-)free electron, a basis of
+                plane waves is the obvious choice. Rougly speaking, the various bases can be 
+                partitioned into categories of localized bases and de-localized ones.
+                The difficulty of performing a quantum mechanical simulation really boils down
+                to how many basis elements we require in order to adequately represent
+                the quantum system. Keep in mind the following correspondence
+                <ul>
+                  <li>Bound electrons \(\leftarrow\rightarrow\) Localized basis</li>
+                  <li>Free electrons \(\leftarrow\rightarrow\) de-localized basis</li>
+                </ul>
+                Now, any intermediate regime between bound and free is usually described by either 
+                one of the two. Furthermore, the farther the system is separated from the 
+                "Bound electron" or the "Free electron" ideals, the more basis functions are needed. 
+                This is the crux of the problem of strongly correlated electron systems.
+                Computational complexity increases drastically both with respect to the 
+                number of electrons included in the system, and the departure from any of 
+                the listed ideal systems. In fact, this limitation is so severe that 
+                theoretical condensed matter physics is only concerned with simplified 
+                models like the Hubbard model, Heisenberg model or the Falicov-Kimball model. 
+                These models usually employ a static lattice approximation, and full
+                numerical treatment is restricted to low dimension. (1D is the most studied)
+                Without exploiting symmetries or other simplifying assumptions on top of the
+                Hubbard model for instance, the number of basis functions scales as \(4^N\) 
+                where N is the number of sites in the crystal lattice. On the most powerful
+                computers, system sizes over \(N=30\) is hardly ever attainable. (And especially
+                not for time-dependent systems)
+    
+              </p>
+              <p><a href="index.html">» (read more)</a></p>
+              <h2>High harmonic generation and light matter coupling</h2>
+              <p>Whereas the previous section laid out the rudimentary notion of a strongly 
+                correlated system, we are here going to look at the process of light matter
+                interaction. For the moment, we will 
+              </p>
+
+            </div>
+          </div>
+        </div> <!--encloses the "columns" div-->
+
+
+        <div id="footer">
+          <a href="http://www.bryantsmith.com">web page designer </a> 
+          <a href="http://www.bryantsmith.com">bryant smith</a>
+        </div>
+      </div> <!--encloses the div with id="page"-->
+  </body>
+</html>

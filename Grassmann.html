@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--MathJax add-on-->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+  </script>
+ 
+ <!--equation numbering-->
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+    </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+  <title>Non equilibrium quantum matter!</title>
+    <style>
+body {
+  margin: 0 auto;
+}
+
+#nav_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 8px;
+  width: 25%;
+  background-color: #f1f1f1;
+  height: 100%;
+  float: left;
+}
+
+
+#nav_list a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#nav_list a.active {
+  background-color:  rgb(62, 62, 243,0.5);
+  color: white;
+}
+
+#nav_list a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.content_text {
+  float: left;
+  width: 60%;
+}
+
+
+
+/* some properties involving the placement of the sidebar. See
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav */
+
+    </style>
+
+
+  </head>
+
+  <body>
+    <div id="page">
+		
+        <div id="header">
+        	<h1>Non equilibrium quantum matter</h1>
+            <h2>A thorough introduction to quantum condensed matter theory <br/> in strong electromagnetic fields</h2>
+            
+        </div>
+        <div id="bar">
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="Theory.html">Theory</a></li>
+
+            </ul>
+        </div>
+
+        <!--vertical navigation bar. Once more; gathered from
+          https://www.w3schools.com/css/css_navbar.asp -->
+
+
+        <!--we need to make a div that incorporates the side bar and the content-->
+        <div class="container">
+          <!--here begins the left justified content-->
+          
+            <ul id="nav_list">
+              <li><a href="Theory.html">Overview</a></li>
+              <li><a href="Greens.html">Greens functions</a></li>
+              <li><a class="active" href="Grassmann.html">Grassman integration</a></li>
+              <li><a href="non_eq_theory.html">Non equilibrium theory</a></li>
+            </ul>
+
+        <!--here begins the right justified content-->
+
+          <div class="content_text">
+            <div class="contentTitle"><h1>Introduction</h1></div>
+            <div class="contentText"> 
+                
+                <p> 
+                    A general many body state of Bosons can be written in the following form 
+                    
+                    \begin{equation}
+                        |\Psi \rangle = \sum_{n_1,n_2,...} c_{n_1,n_2,...} |n_1,n_2,... \rangle
+                    \end{equation}
+                    where \( c_{n_1,n_2,...} \) are complex expansion coefficients. To the end of 
+                    introducing the path integral, it is desirable to device a minimal uncertainty 
+                    state, since the Feynman path integral is a concept which evolves around a classical 
+                    action. (to be defined) Such a minimal uncertainty state is called a coherent state,
+                    and is defined as follows
+                    \begin{equation}
+                        |\alpha\rangle = e^{\sum_{j} \alpha_j \hat{a}^{\dagger}_j} |0\rangle
+                    \end{equation}
+                    where \(\alpha_j \in \mathrm{C}\). By way of the identity, \([\hat{a},(\hat{a}^{\dagger})^n]=n(\hat{a}^{\dagger})^{n-1} \)
+                    
+                    \begin{equation}
+                        \hat{a}|\alpha\rangle = \alpha |\alpha \rangle
+                    \end{equation}
+                    Next, we may attempt to develop a fermionic coherent state. Proceeding along the lines
+                    above will lead us into trouble. Instead of deriving the following theory rigorously, we
+                    will develop the theory from the simplest example. For a system with one fermionic species, 
+                    define an ansatz coherent state
+                    
+                    \begin{equation}
+                        |\theta \rangle = e^{\rho \theta \hat{c}^{\dagger}} |0\rangle
+                    \end{equation}
+                    whence we get 
+
+                    \begin{equation}
+                        \hat{c} |\theta \rangle = \rho\hat{c} \theta \hat{c}^{\dagger}|0\rangle
+                    \end{equation}
+
+                    \begin{equation}
+                        \theta |\theta \rangle = \theta |0\rangle + \rho \theta \theta \hat{c}^{\dagger} |0\rangle 
+                    \end{equation}
+                
+                    \begin{equation}
+                        \hat{c}|\theta\rangle = \theta |\theta \rangle
+                    \end{equation}
+                    is satisfied by \(\theta^2=0 \), \( \hat{c}\theta=-\theta\hat{c}\) and \(\rho=-1\).
+                    In fact, the coherent state encompassing all fermionic species of the problem
+
+                    \begin{equation}
+                        |\theta \rangle =e^{-\sum_{j}\theta_j \hat{c}_j} |0\rangle
+                    \end{equation}
+
+                    must obey similar properties in order for it to be a coherent state. Namely,
+
+                    \begin{equation}\label{xx}
+                    \begin{split}
+                        &\theta_i \theta_j + \theta_j \theta_i=0 \\
+                        &\hat{c}_i \theta_j + \theta_j \hat{c}_i=0 \\
+                    \end{split}
+                    \end{equation}
+                    Grassmann numbers commute with complex numbers since they are defined as a vector space
+                    over the complex numbers. 
+
+                    Further, the coherent states can be used to reformulate expectation values in terms of path integrals.
+                    To that end, we must first formulate the identiy operator in Fock space in terms of them.
+                    \begin{equation}
+                        1 = \int \prod_{i} d({\psi_i}^{*}{\psi_i}) e^{-{\psi_i}^{*} \psi_i} |{\psi} \rangle\langle \psi |
+                    \end{equation}
+                    This can be used to show that
+
+                    \begin{equation}
+                        \text{tr}\{\hat{O} \} = \int \mathcal{D}(\overline{\psi},\psi)e^{-\sum_{i}\overline{\psi}_i\psi_i} \langle -\psi |\hat{O}|\psi \rangle
+                    \end{equation}
+
+                    For one fermionic species, the integral for the partition function becomes
+
+                    \begin{equation}
+                        \mathcal{Z} = \int d \overline{\psi} d \psi e^{-\overline{\psi} \psi} \langle -\psi |e^{-\beta \hat{\mathcal{H}}}| \psi \rangle
+                    \end{equation}
+                    
+                    By writing \( e^{-\beta \hat{\mathcal{H}}}=\prod_{n}^N e^{-\Delta\tau \hat{\mathcal{H}}}\), \(\hat{\mathcal{Z}}\)
+                    may be written 
+
+                    \begin{equation}
+                    \begin{split}
+                        \mathcal{Z}&=\int \prod^N d\overline{\psi}_n d\psi_n e^{-\overline{\psi}_n\psi_n} \langle \psi_n |e^{-\Delta\tau \hat{\mathcal{H}}} |\psi_{n-1}\rangle  \\
+                        &=\int \prod^N d\overline{\psi}_n d\psi_n e^{-\overline{\psi}_n \psi_n} e^{-\Delta\tau \mathcal{H} (\overline{\psi_n},\psi_{n-1})}  \langle \psi_n |\psi_{n-1}\rangle  \\
+                        &=\int \prod^N d\overline{\psi}_n d\psi_n e^{-\overline{\psi}_n\psi_n} e^{-\Delta\tau \mathcal{H}(\overline{\psi_n},\psi_{n-1})}  \langle \psi_n |\psi_{n-1}\rangle  \\
+                        &=\int \prod^N d\overline{\psi}_n d\psi_n e^{-\overline{\psi}_n\psi_n} e^{-\Delta\tau \mathcal{H}(\overline{\psi_n},\psi_{n-1}) + \overline{\psi}_n \psi_{n-1} }  \\
+                    \end{split}
+                    \end{equation}
+                    
+                    After re-writing the exponential in the following form 
+
+                    \begin{equation}
+                        \prod^N e^{-\Delta\tau \mathcal{H}(\overline{\psi_n},\psi_{n-1}) + \overline{\psi}_n \psi_{n-1} } = e^{ -\Delta\tau \sum_{n=1}^N \{ \frac{\overline{\psi}_n(\psi_n -\psi_{n-1}) }{\Delta\tau} + \mathcal{H}(\overline{\psi}_n,\psi_{n-1}) \} }
+                    \end{equation}
+                    and taking the limit \( N\rightarrow \infty\), we may write the partition function as follows
+
+                    \begin{equation}
+                        \mathcal{Z}=\int_{\overline{\psi}(\beta)=-\psi(0)} D[\overline{\psi},\psi] e^{ -\int_{0}^{\beta} d\tau [\overline{\psi}(\tau) \frac{\partial}{\partial \tau}\psi(\tau)  + \mathcal{H}(\overline{\psi}(\tau),\psi(\tau)) ] }
+                    \end{equation}
+
+                    where we have defined the integration measure \( D[\overline{\psi},\psi] =\frac{\text{lim}}{N\rightarrow \infty} \prod_{n}^N d\overline{\psi}_n d\psi_n \)
+                    Incidentally, the integral demanded that \(\psi(\beta)=-\psi(0) \). i.e., the fermionc fields are anti-periodic 
+                    like the Matsubara green's functions, and hence we may expand them in a Fourier series over the interval \([-\beta,\beta] \).
+
+                    Now, the most important take away from the introduction to path integrals is how we proceed 
+                    in calculating correlation functions. By following the steps leading to the path integral
+                    formulation of the partition function, we obtain
+
+                    \begin{equation}
+                        \langle \hat{\tau} \hat{c}(\tau)\hat{c}^{\dagger}(0)\rangle = \frac{\int D[\overline{\psi},\psi] {\psi}(\tau) \overline{\psi(0)} e^{-S[\overline{\psi},\psi]} } {\int D[\overline{\psi},\psi] e^{-S[\overline{\psi},\psi]}}
+                    \end{equation}
+
+                    Another concept which will provide useful is to integrate out fermion species in the theory. 
+                    Suppose we have a partition function of the following form 
+
+                    \begin{equation}
+                        \int d\overline{\phi}d\phi d\overline{\psi}d\psi e^{-(A \overline{\phi}\phi + B(\overline{\psi}\phi + \overline{\phi}\psi + D \overline{\phi}\phi ) )} = \int d\overline{\phi}d\phi e^{ - (D-\frac{B^2}{A})} \overline{\phi} \phi
+                    \end{equation}
+
+                    where A,B and C are complex numbers. This identity is demonstrated by performing a Taylor
+                    expansion of the left hand side and evaluate the action of the integral operators on various terms. 
+                </p>
+
+                <h2>The Anderson impurity model (AIM)</h2>
+
+                \begin{equation}
+                    \hat{H} = \sum_{k} \xi_{k} \hat{c}_{\boldsymbol{k},\sigma}^{\dagger} \hat{c}_{\boldsymbol{k},\sigma}
+                    + \xi_{\text{d}}\hat{d}_{\sigma}^{\dagger} \hat{d}_{\sigma} + \gamma (\hat{d}_{\sigma}^{\dagger}\hat{c}(\boldsymbol{r}=0) + \hat{c}^{\dagger}(\boldsymbol{r}=0)\hat{d}_{\sigma})
+                \end{equation}
+    
+
+            </div>
+          </div>
+        </div> <!--encloses the "columns" div-->
+
+
+        <div id="footer">
+          <a href="http://www.bryantsmith.com">web page designer </a> 
+          <a href="http://www.bryantsmith.com">bryant smith</a>
+        </div>
+      </div> <!--encloses the div with id="page"-->
+  </body>
+</html>
