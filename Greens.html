@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
 <!--MathJax add-on-->
   <script type="text/javascript" async
@@ -22,35 +23,6 @@ body {
   margin: 0 auto;
 }
 
-#nav_list {
-  list-style-type: none;
-  margin: 0;
-  padding: 8px;
-  width: 25%;
-  background-color: #f1f1f1;
-  /*position: fixed;*/
-  height: 100%;
-  /*overflow: auto;*/
-  float: left;
-}
-
-
-#nav_list a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-#nav_list a.active {
-  background-color:  rgb(62, 62, 243,0.5);
-  color: white;
-}
-
-#nav_list a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
 
 .content_text {
   float: left;
@@ -63,8 +35,6 @@ body {
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav */
 
     </style>
-
-
   </head>
 
   <body>
@@ -72,7 +42,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav */
 		
         <div id="header">
         	<h1>Non equilibrium quantum matter</h1>
-            <h2>A thorough introduction to quantum condensed matter theory <br/> in strong electromagnetic fields</h2>
+            <h2>An introduction to quantum condensed matter theory <br/> in strong electromagnetic fields</h2>
             
         </div>
         <div id="bar">
@@ -95,7 +65,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav */
               <li><a href="Theory.html">Overview</a></li>
               <li><a class="active" href="Greens.html">Greens functions</a></li>
               <li><a href="Grassmann.html">Grassman integration</a></li>
-              <li><a href="non_eq_theory.html">Non equilibrium theory</a></li>
+              <li><a href="#">Non equilibrium theory</a></li>
             </ul>
 
         <!--here begins the right justified content-->
@@ -286,7 +256,6 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav */
                     
                     \begin{equation}
                         \mathcal{G}_{\alpha,\beta}(i\omega_k) =-\frac{i}{\mathcal{Z}} \sum_{n,m} e^{-\beta E_n} \langle n| \hat{c}_{\alpha}|m\rangle\langle m|\hat{c}_{\beta}^{\dagger}|n\rangle \frac{( {e^{i\omega_k \beta +\beta E_n \tau - E_m\tau}} -1)}{i\omega_k + E_n -E_m} \\
-                        = 
                     \end{equation}
                 </p>
 
